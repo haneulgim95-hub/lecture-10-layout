@@ -13,10 +13,10 @@ import About from "../pages/About.tsx";
 
 // () => void       ====>  VoidFunction
 // 너무 많이쓰니깐 VoidFunction이라는 기본타입으로 제공해주고 있따.
-export const AppRouter = (onClick: VoidFunction ) => {
+export const AppRouter = () => {
     const routes: RouteObject[] = [
         {
-            element: <MainLayout onClick={onClick}/>,
+            element: <MainLayout/>,
             path: "/",
             children: [
                 // index: true란, 부모의 주소로 걸렸을때, 해당 컴포넌트에 걸린다
