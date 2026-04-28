@@ -1,12 +1,16 @@
 import styled from "styled-components";
 import { Link } from "react-router";
+import { ThemeContext } from "../contexts/theme/ThemeContext.tsx";
+import { useContext } from "react";
+import { ImSun } from "react-icons/im";
+import { FaMoon } from "react-icons/fa";
 
 const Head = styled.header`
     height: 64px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ccc;
+    background-color: ${props => props.theme.colors.muted};
 `;
 
 const NavLeft = styled.div`
@@ -32,6 +36,9 @@ const Nav = styled.nav`
 `;
 
 function Header() {
+    const context = useContext(ThemeContext);
+    if (!context) throw new Error("Provider 안에서 사용해주세요");
+
     return (
         <Head>
             <NavLeft>
@@ -43,6 +50,9 @@ function Header() {
             </NavLeft>
             <NavRight>
                 <Link to={"/auth/login"}>로그인</Link>
+                <button onClick={context.toggleTheme}>
+                    {context.theme === "light" ? <ImSun size={24}/> : <FaMoon size={24}/>}
+                </button>
             </NavRight>
         </Head>
     );

@@ -9,7 +9,7 @@ import About from "../pages/About.tsx";
 export const AppRouter = () => {
     const routes: RouteObject[] = [
         {
-            element: <MainLayout/>,
+            element: <MainLayout />,
             path: "/",
             children: [
                 // index: true란, 부모의 주소로 걸렸을때, 해당 컴포넌트에 걸린다

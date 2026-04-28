@@ -3,10 +3,12 @@ import Header from "../components/Header.tsx";
 import { Outlet } from "react-router";
 import Footer from "../components/Footer.tsx";
 
-export const Wrap = styled.div`
+const Wrap = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 100dvh;
+    background-color: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.text}
 `;
 
 const Main = styled.main`
