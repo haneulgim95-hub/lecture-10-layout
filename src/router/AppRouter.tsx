@@ -6,10 +6,10 @@ import About from "../pages/About.tsx";
 
 
 // 실제 라우팅 처리
-export const AppRouter = () => {
+export const AppRouter = (onClick: VoidFunction) => {
     const routes: RouteObject[] = [
         {
-            element: <MainLayout/>,
+            element: <MainLayout onClick={onClick}/>,
             path: "/",
             children: [
                 // index: true란, 부모의 주소로 걸렸을때, 해당 컴포넌트에 걸린다

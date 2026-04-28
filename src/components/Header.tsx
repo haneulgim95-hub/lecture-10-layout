@@ -6,7 +6,7 @@ const Head = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ccc;
+    background-color: ${props => props.theme.colors.muted};
 `;
 
 const NavLeft = styled.div`
@@ -31,7 +31,7 @@ const Nav = styled.nav`
     gap: 20px;
 `;
 
-function Header() {
+function Header({onClick}: {onClick: VoidFunction}) {
     return (
         <Head>
             <NavLeft>
@@ -43,6 +43,7 @@ function Header() {
             </NavLeft>
             <NavRight>
                 <Link to={"/auth/login"}>로그인</Link>
+                <button onClick={onClick}>다크모드</button>
             </NavRight>
         </Head>
     );
