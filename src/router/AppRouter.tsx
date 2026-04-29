@@ -7,7 +7,7 @@ import Login from "../pages/Login.tsx";
 export const AppRouter = () => {
     const routes: RouteObject[] = [
         {
-            element: <MainLayout/>,
+            element: <MainLayout />,
             path: "/",
             children: [
                 {index: true, element: <Home/>},
